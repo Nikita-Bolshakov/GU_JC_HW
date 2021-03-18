@@ -1,4 +1,4 @@
-package tasks_from_lesson_3;
+package lesson3.task;
 
 public class CharCounter {
     public static void main(String[] args) {
