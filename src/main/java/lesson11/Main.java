@@ -29,11 +29,11 @@ public class Main {
 
     }
 
-    public void replacement(Object[] array, int A, int B) {
+    public <T> void replacement(T[] array, int A, int B) {
 
         System.out.println(Arrays.toString(array));
 
-        Object C = array[A];
+        T C = array[A];
         array[A] = array[B];
         array[B] = C;
 
