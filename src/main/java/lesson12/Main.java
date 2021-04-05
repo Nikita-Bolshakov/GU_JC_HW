@@ -87,15 +87,8 @@ public class Main {
         System.arraycopy(array, 0, array1, 0, HALF_SIZE);
         System.arraycopy(array, HALF_SIZE, array2, 0, HALF_SIZE);
 
-        new Thread(() -> {
-            float[] a1 = calculate(array1);
-            System.arraycopy(a1, 0, array1, 0, a1.length);
-        }).start();
-
-        new Thread(() -> {
-            float[] a2 = calculate(array2);
-            System.arraycopy(a2, 0, array2, 0, a2.length);
-        }).start();
+        new Thread(() -> calculate(array1)).start();
+        new Thread(() -> calculate(array2)).start();
 
         System.arraycopy(array1, 0, array, 0, HALF_SIZE);
         System.arraycopy(array2, 0, array, HALF_SIZE, HALF_SIZE);
