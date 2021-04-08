@@ -18,7 +18,7 @@ public class Car implements Runnable {
         return speed;
     }
 
-    public Car(Race race, int speed, CyclicBarrier cb) {
+    public Car(Race race, int speed, CyclicBarrier cb) { // +
         this.race = race;
         this.speed = speed;
         CARS_COUNT++;
@@ -43,7 +43,7 @@ public class Car implements Runnable {
         }
     }
 
-    private static synchronized void checkWinner(Car c) {
+    private static synchronized void checkWinner(Car c) {  //+
         if (!winner) {
             System.out.println(c.name + " - Выиграл!!!");
             winner = true;
